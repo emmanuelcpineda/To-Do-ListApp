@@ -1,0 +1,401 @@
+{
+	"info": {
+		"_postman_id": "ec8c1585-bc37-4968-ac11-f1dbdff70964",
+		"name": "To-Do List App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29537187",
+		"_collection_link": "https://interstellar-station-178994.postman.co/workspace/Batch-311~2224f678-168e-4549-a236-89fb85d9ff97/collection/29537187-ec8c1585-bc37-4968-ac11-f1dbdff70964?action=share&source=collection_link&creator=29537187"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "create-user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Ant Man\",\r\n    \"email\": \"ant@man.net\",\r\n    \"phoneNumber\": \"3296758910\",\r\n    \"password\": \"admin-user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4500/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4500",
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login-user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"scarlet@witch.net\",\r\n    \"password\": \"guest-user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4500/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4500",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all users' info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4500/users/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4500",
+							"path": [
+								"users",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get info of specific user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4500/users/6523adeb64d1be9fd7f6941a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4500",
+							"path": [
+								"users",
+								"6523adeb64d1be9fd7f6941a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tasks",
+			"item": [
+				{
+					"name": "create task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjNhZGViNjRkMWJlOWZkN2Y2OTQxYSIsImVtYWlsIjoic2NhcmxldEB3aXRjaC5uZXQiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjk2ODY0MTQ1fQ.uQs1ZPesL1CeVr_6u0d0sUI6Ezq-2pTh_ijyBtanAms",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"blog\",\r\n    \"toDoTask\": \"write content for blog\",\r\n    \"remarks\": \"still need to start\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4500/tasks/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4500",
+							"path": [
+								"tasks",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user's tasks",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjNhZGViNjRkMWJlOWZkN2Y2OTQxYSIsImVtYWlsIjoic2NhcmxldEB3aXRjaC5uZXQiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjk2OTA0ODk5fQ.V7xbLCnsSuX1oWdph0FacILqmgeJehhl262zc0Cps1w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4500/tasks/6523adeb64d1be9fd7f6941a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4500",
+							"path": [
+								"tasks",
+								"6523adeb64d1be9fd7f6941a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update a task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjNhZGViNjRkMWJlOWZkN2Y2OTQxYSIsImVtYWlsIjoic2NhcmxldEB3aXRjaC5uZXQiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjk2ODk1MzgyfQ.-RZ2H02sF8UoZtAb1qWDrCdE_JBws4Ee5iNh2aCNZI8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"study\",\r\n    \"toDoTask\": \"learn the fundamentals of cyber security\",\r\n    \"remarks\": \"started now\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4500/tasks/65241819b9a9b2fde01e3bfe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4500",
+							"path": [
+								"tasks",
+								"65241819b9a9b2fde01e3bfe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update task status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjNhZGViNjRkMWJlOWZkN2Y2OTQxYSIsImVtYWlsIjoic2NhcmxldEB3aXRjaC5uZXQiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjk2ODY0MTQ1fQ.uQs1ZPesL1CeVr_6u0d0sUI6Ezq-2pTh_ijyBtanAms",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4500/tasks/status/65241819b9a9b2fde01e3bfe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4500",
+							"path": [
+								"tasks",
+								"status",
+								"65241819b9a9b2fde01e3bfe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete a task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjNhZTZlZTcxYWZjYjczY2EwYWQ1NSIsImVtYWlsIjoiYW50QG1hbi5uZXQiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2OTY4OTcxODh9._Fn-qN6XiMwHw4prioziG4PV6leHVsushS4FnfEbpwU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4500/tasks/6524057bb7b084577be2134b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4500",
+							"path": [
+								"tasks",
+								"6524057bb7b084577be2134b"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "lists",
+			"item": [
+				{
+					"name": "create-list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjNhZTZlZTcxYWZjYjczY2EwYWQ1NSIsImVtYWlsIjoiYW50QG1hbi5uZXQiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE2OTY4OTcxODh9._Fn-qN6XiMwHw4prioziG4PV6leHVsushS4FnfEbpwU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"6523adeb64d1be9fd7f6941a\",\r\n    \"taskId\": \"65241819b9a9b2fde01e3bfe\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4500/lists/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4500",
+							"path": [
+								"lists",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjNhZGViNjRkMWJlOWZkN2Y2OTQxYSIsImVtYWlsIjoic2NhcmxldEB3aXRjaC5uZXQiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjk2OTA2MDA1fQ.vhgKgIWn4eT5fvjLrI5u3gOXBX6G-D7AWKCvEEvuWQc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4500/lists/6523adeb64d1be9fd7f6941a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4500",
+							"path": [
+								"lists",
+								"6523adeb64d1be9fd7f6941a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjNhZGViNjRkMWJlOWZkN2Y2OTQxYSIsImVtYWlsIjoic2NhcmxldEB3aXRjaC5uZXQiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjk2OTA2MDA1fQ.vhgKgIWn4eT5fvjLrI5u3gOXBX6G-D7AWKCvEEvuWQc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4500/lists/6524b60a60d43075c840a392",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4500",
+							"path": [
+								"lists",
+								"6524b60a60d43075c840a392"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
