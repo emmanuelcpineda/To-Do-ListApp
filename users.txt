@@ -1,0 +1,5 @@
+admin: ant@man.net
+password: admin-user
+
+guest: scarlet@witch.net
+password: guest-user
